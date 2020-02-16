@@ -17,7 +17,7 @@ const App = (props) => {
             <Display counter={counter} />
             <Button
                 onClick={() => setToValue(counter + 1)}
-                text='plus'
+                text='plus'Z
             />
             <Button
                 onClick={() => setToValue(counter - 1)}
