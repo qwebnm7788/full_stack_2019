@@ -1,44 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-const Header = (props) => {
-    return (
-        <div>
-            <h1>{props.course.name}</h1>
-        </div>
-    )
-}
-
-const Part = (props) => {
-    return (
-        <p>
-            {props.part.name} {props.part.exercise}
-        </p>
-    )
-}
-
-const Content = (props) => {
-    return (
-        <div>
-            <Part part={props.parts[0]} />
-            <Part part={props.parts[1]} />
-            <Part part={props.parts[2]} />
-        </div>
-    )
-}
-
-const Total = (props) => {
-    const parts = props.parts
-    var total = 0
-
-    for (let part of parts) {
-        total += part.exercise
-    }
-
-    return (
-        <p>Number of exercises {total}</p>
-    )
-}
+import React from 'react'
+import Courses from './components/Courses'
 
 const App = () => {
     const courses = [
@@ -84,14 +45,14 @@ const App = () => {
             }
           ]
         }
-    ]
+      ]
+
     return (
         <div>
-            <Header course={course} />
-            <Content parts={course.parts} />
-            <Total parts={course.parts} />
+            <Courses courses={courses} />
         </div>
     )
+
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))
+export default App
